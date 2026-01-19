@@ -34,21 +34,21 @@ A simple, universal script to install NVIDIA drivers on **any Linux distribution
 ### 1. Using the Shell Launcher (Recommended)
 
 ```bash
-# Download and run the launcher
+
 curl -fsSL https://raw.githubusercontent.com/nocapscripts/Nvidia-Setup/main/web-run.sh | bash
 
 ```
 ### 1. Using the Shell Launcher as clone (Recommended)
 
 ```bash
-# Download and run the launcher
+
 git clone https://github.com/nocapscripts/Nvidia-Setup.git
 
 ```
 ### Start the script
 
 ```bash
-# Download and run the launcher
+
 python3 start.py
 
 ```
