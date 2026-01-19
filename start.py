@@ -17,6 +17,11 @@ MAGENTA = "\033[35m"
 
 # ========= UTILS =========
 def run_command(cmd, sudo=False):
+    """
+    Run a system command.
+    cmd: list of command parts, e.g., ["apt", "update"]
+    sudo: whether to prepend 'sudo'
+    """
     if sudo:
         cmd = ["sudo"] + cmd
     try:
@@ -24,6 +29,7 @@ def run_command(cmd, sudo=False):
     except subprocess.CalledProcessError:
         print(f"{RED}{BOLD}❌ Command failed:{RESET} {' '.join(cmd)}")
         sys.exit(1)
+
 
 def banner():
     os.system("clear")
@@ -33,6 +39,7 @@ def banner():
 ========================================
 {RESET}""")
 
+
 def print_menu():
     print(f"{YELLOW}{BOLD}Choose an option:{RESET}\n")
     print(f"{GREEN}1){RESET} Install NVIDIA Drivers (Auto Detect)")
@@ -41,14 +48,27 @@ def print_menu():
     print(f"{GREEN}4){RESET} Install All")
     print(f"{RED}5){RESET} Exit\n")
 
+
 def pause():
     input(f"{MAGENTA}Press Enter to continue...{RESET}")
+
 
 # ========= MAIN =========
 def main():
     # Ensure script runs from project root
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
+
+    # Make all installer scripts executable
+    installers_dir = os.path.join(script_dir, "installers")
+    if os.path.isdir(installers_dir):
+        for filename in os.listdir(installers_dir):
+            file_path = os.path.join(installers_dir, filename)
+            if os.path.isfile(file_path):
+                run_command(["chmod", "+x", file_path], sudo=True)
+    else:
+        print(f"{RED}{BOLD}❌ 'installers' directory not found!{RESET}")
+        sys.exit(1)
 
     while True:
         banner()
@@ -89,6 +109,7 @@ def main():
         else:
             print(f"\n{RED}{BOLD}❌ Invalid option. Please try again.{RESET}\n")
             pause()
+
 
 if __name__ == "__main__":
     main()
