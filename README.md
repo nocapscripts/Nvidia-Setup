@@ -44,3 +44,11 @@ curl -fsSL https://raw.githubusercontent.com/nocapscripts/Nvidia-Setup/main/web-
 # Download and run the launcher
 git clone https://github.com/nocapscripts/Nvidia-Setup.git
 
+```
+### Start the script
+
+```bash
+# Download and run the launcher
+python3 start.py
+
+```
