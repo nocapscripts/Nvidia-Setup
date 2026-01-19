@@ -16,6 +16,14 @@ A simple, universal script to install NVIDIA drivers on **any Linux distribution
 
 ---
 
+
+## REQUIREMENTS
+
+- ⚠️ Make sure you have linux-headers or linux-zen-headers installer
+- ⚠️ Make sure you have kms installed
+
+---
+
 ## Supported Distributions
 
 | Distribution | Supported Package Manager |
