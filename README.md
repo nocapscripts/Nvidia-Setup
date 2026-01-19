@@ -22,7 +22,7 @@ A simple, universal script to install NVIDIA drivers on **any Linux distribution
 | ------------ | ------------------------ |
 | Ubuntu / Debian | `apt` |
 | Fedora | `dnf` |
-| Arch / Manjaro | `pacman` | `yay` |
+| Arch / Manjaro | `pacman` `yay` | 
 | Other | Manual installation supported |
 
 > Note: For unsupported distributions, the script allows **manual driver installation**.
